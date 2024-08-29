@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+    //   let data = [60, 30, 10, 67, 50];
+    //   let newEl = 40;
+    //   let position = 2;
+    //   for (let i = data.length - 1; i >= 0; i--) {
+    //     // console.log(`index ${i} and its value ${data[i]}`);
+    //     if (i >= position) {
+    //       data[i + 1] = data[i];
+    //       if (i == position) {
+    //         data[i] = newEl;
+    //       }
+    //     }
+    //   }
+
+      function insertEl() {
+        let data = [60, 30, 10, 67, 50];
+        let newEl = document.getElementById('element').value;
+        newEl=parseInt(newEl);
+        let position =  document.getElementById('position').value;
+        console.log(data);
+
+        for (let i = data.length - 1; i >= 0; i--) {
+            if (i >= position) {
+                data[i + 1] = data[i];
+                if (i == position) {
+                    data[i] = newEl;
+                }
+            }
+        }
+        // console.log(`index ${i} and its value ${data[i]}`);
+        console.log(data);
+
+
+
+
+        // or we can use data.splice(2,0,5000);
+      }
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <input type="text" id="position" placeholder="enter position" />
+    <input type="text" id="element" placeholder="enter new element" />
+    <button onclick="insertEl()">insert</button>
+  </body>
+</html>
